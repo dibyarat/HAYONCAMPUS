@@ -249,8 +249,29 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  padding: 3px;
+}
+
+.brand-link:hover .brand-badge {
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(255, 45, 120, 0.35);
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-logo-icon {
@@ -355,6 +376,62 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Hero Title Card / Official Brand Emblem */
+.hero-title-card {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border-radius: 32px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.08) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 16px 48px -12px rgba(255, 45, 120, 0.35),
+              0 24px 64px -16px rgba(0, 150, 255, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+.hero-title-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 56px -10px rgba(255, 45, 120, 0.45),
+              0 30px 72px -14px rgba(0, 150, 255, 0.45),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.title-card-glow-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 40px;
+  background: radial-gradient(circle, rgba(255, 45, 120, 0.3) 0%, rgba(0, 150, 255, 0.3) 50%, transparent 70%);
+  filter: blur(14px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.title-card-logo {
+  width: clamp(140px, 20vw, 190px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.25));
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* Tagline Pill */
@@ -1071,7 +1148,7 @@ a {
 .identity-icon-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   padding: 6px 14px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1083,6 +1160,14 @@ a {
   margin-bottom: 16px;
 }
 
+.identity-pill-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+}
+
 .identity-heading {
   font-size: clamp(2rem, 3.2vw, 2.75rem);
   font-weight: 800;
@@ -1092,7 +1177,7 @@ a {
 
 .identity-description {
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.88);
 }
 
@@ -1137,7 +1222,35 @@ a {
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+}
+
+.footer-brand-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.footer-brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-brand-name {
@@ -1149,7 +1262,7 @@ a {
 
 .footer-tagline {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .copyright-text {
@@ -1228,9 +1341,38 @@ a {
   max-width: 780px;
 }
 
+.modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.modal-logo-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.modal-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .modal-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -1684,5 +1826,21 @@ a {
 
   .modal-container {
     padding: 24px 18px;
+  }
+
+  .hero-title-card {
+    padding: 12px 16px;
+    border-radius: 24px;
+    margin-bottom: 20px;
+  }
+
+  .title-card-logo {
+    width: 130px;
+  }
+
+  .modal-logo-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
   }
 }

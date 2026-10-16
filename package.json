@@ -1,14 +1,14 @@
 {
   "name": "hayoncampus",
   "version": "1.0.0",
-  "description": "The parent platform behind CampusAssist and StudyOS.",
+  "description": "The parent platform behind CampAssist and StudyOS.",
   "scripts": {
     "start": "npx --yes serve -s . -l 3000",
     "dev": "npx --yes serve -s . -l 3000"
   },
   "keywords": [
     "hayoncampus",
-    "campusassist",
+    "campassist",
     "studyos",
     "saas-landing-page"
   ],

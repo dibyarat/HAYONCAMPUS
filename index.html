@@ -4,11 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HayonCampus — The Parent Platform for Student Life & Study</title>
-  <meta name="description" content="HayonCampus is the unified parent platform behind CampusAssist (daily college companion) and StudyOS (academic collaborative workspace). One identity, two experiences.">
-  <meta name="keywords" content="HayonCampus, CampusAssist, StudyOS, college companion, academic workspace, student timetable, attendance calculator, team finder">
+  <meta name="description" content="HayonCampus is the unified parent platform behind CampAssist (daily college companion) and StudyOS (academic collaborative workspace). One identity, two experiences.">
+  <meta name="keywords" content="HayonCampus, CampAssist, StudyOS, college companion, academic workspace, student timetable, attendance calculator, team finder">
   
   <!-- Favicon / Brand Icon -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/hayoncampus-192.png">
+  
+  <!-- Social Media Title Card / OpenGraph Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hayoncampus.vercel.app">
+  <meta property="og:title" content="HayonCampus — Higher Days, Brighter You">
+  <meta property="og:description" content="The unified parent platform behind CampAssist and StudyOS. One identity, two experiences.">
+  <meta property="og:image" content="assets/hayoncampus-logo.png">
+  
+  <!-- Twitter Title Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HayonCampus — Higher Days, Brighter You">
+  <meta name="twitter:description" content="The unified parent platform behind CampAssist and StudyOS. One identity, two experiences.">
+  <meta name="twitter:image" content="assets/hayoncampus-logo.png">
   
   <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,17 +46,7 @@
         <!-- Wordmark / Brand -->
         <a href="#" class="brand-link" aria-label="HayonCampus Home">
           <div class="brand-badge">
-            <svg class="brand-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#ffffff" stop-opacity="0.95"/>
-                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
-                </linearGradient>
-              </defs>
-              <rect x="2" y="2" width="36" height="36" rx="12" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-              <path d="M12 28V12L20 18L28 12V28" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="20" cy="24" r="2.5" fill="white"/>
-            </svg>
+            <img src="assets/hayoncampus-icon.png" alt="HayonCampus Logo" class="brand-logo-img">
           </div>
           <span class="brand-name">HayonCampus</span>
         </a>
@@ -79,6 +84,12 @@
     <!-- 2. HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="hero-container">
+        <!-- Title Card / Official Brand Emblem -->
+        <div class="hero-title-card" aria-label="HayonCampus Logo">
+          <div class="title-card-glow-ring" aria-hidden="true"></div>
+          <img src="assets/hayoncampus-logo.png" alt="HayonCampus Official Logo" class="title-card-logo">
+        </div>
+
         <!-- Tagline Pill -->
         <div class="tagline-pill-wrapper">
           <div class="tagline-pill">
@@ -94,7 +105,7 @@
 
         <!-- Supporting Paragraph -->
         <p class="hero-description">
-          HayonCampus unifies <strong>CampusAssist</strong> and <strong>StudyOS</strong> under one seamless identity. From navigating morning lectures and tracking attendance to collaborating on lab projects and building hackathon teams—everything stays synchronized in one connected ecosystem.
+          HayonCampus unifies <strong>CampAssist</strong> and <strong>StudyOS</strong> under one seamless identity. From navigating morning lectures and tracking attendance to collaborating on lab projects and building hackathon teams—everything stays synchronized in one connected ecosystem.
         </p>
 
         <!-- Two Hero Buttons -->
@@ -126,15 +137,15 @@
       <div class="chips-container">
         <p class="chips-label">Explore core modules across the HayonCampus suite:</p>
         <div class="chips-row" role="tablist">
-          <button type="button" class="feature-chip active" data-feature="timetable" data-app="campusassist" role="tab" aria-selected="true">
+          <button type="button" class="feature-chip active" data-feature="timetable" data-app="campassist" role="tab" aria-selected="true">
             <span class="chip-icon">📅</span>
             <span>Timetable</span>
           </button>
-          <button type="button" class="feature-chip" data-feature="attendance" data-app="campusassist" role="tab" aria-selected="false">
+          <button type="button" class="feature-chip" data-feature="attendance" data-app="campassist" role="tab" aria-selected="false">
             <span class="chip-icon">🎯</span>
             <span>Attendance</span>
           </button>
-          <button type="button" class="feature-chip" data-feature="roomfinder" data-app="campusassist" role="tab" aria-selected="false">
+          <button type="button" class="feature-chip" data-feature="roomfinder" data-app="campassist" role="tab" aria-selected="false">
             <span class="chip-icon">📍</span>
             <span>Room Finder</span>
           </button>
@@ -164,19 +175,19 @@
 
         <div class="products-grid">
 
-          <!-- CARD 1: CampusAssist -->
-          <article class="glass-card product-card" id="cardCampusAssist">
+          <!-- CARD 1: CampAssist -->
+          <article class="glass-card product-card" id="cardCampAssist">
             <div class="card-glow" aria-hidden="true"></div>
             
             <!-- Top Badge / Header -->
             <div class="card-header">
               <div class="product-badge-group">
                 <div class="icon-badge campassist-badge">
-                  <img src="assets/campassist-icon.png" alt="CampusAssist Icon" class="badge-img" onerror="this.src='assets/logo-mark.svg'">
+                  <img src="assets/campassist-icon.png" alt="CampAssist Icon" class="badge-img" onerror="this.src='assets/logo-mark.svg'">
                 </div>
                 <div class="product-meta">
                   <span class="app-subtag">DAILY CAMPUS ENGINE</span>
-                  <h3 class="product-title">CampusAssist</h3>
+                  <h3 class="product-title">CampAssist</h3>
                 </div>
               </div>
               <span class="status-pill active-pill">Live on Campus</span>
@@ -245,11 +256,11 @@
 
             <!-- Card Action Footer -->
             <div class="card-footer">
-              <button type="button" class="card-link-btn" id="openCampusAssistBtn">
-                <span>Open CampusAssist</span>
+              <button type="button" class="card-link-btn" id="openCampAssistBtn">
+                <span>Open CampAssist</span>
                 <span class="arrow-symbol">→</span>
               </button>
-              <button type="button" class="interactive-pill-tag" id="previewCampusAssistBtn">
+              <button type="button" class="interactive-pill-tag" id="previewCampAssistBtn">
                 Quick Demo
               </button>
             </div>
@@ -364,7 +375,7 @@
               <span class="stat-divider-slash">/</span>
               <span class="stat-label">unified campus apps</span>
             </div>
-            <p class="stat-subdetail">CampusAssist for operations • StudyOS for academics</p>
+            <p class="stat-subdetail">CampAssist for operations • StudyOS for academics</p>
           </div>
 
           <!-- Vertical Divider 1 -->
@@ -424,7 +435,7 @@
             <div class="flow-step">
               <div class="step-badge">1</div>
               <h4>Check Next Class & Room</h4>
-              <p>Wake up and glance at CampusAssist. Your room code, floor number, and lecturer name are ready before you step out of the dorm.</p>
+              <p>Wake up and glance at CampAssist. Your room code, floor number, and lecturer name are ready before you step out of the dorm.</p>
               <div class="interactive-snippet">
                 <span class="snip-icon">📍</span>
                 <code>Room 304 • Data Structures • In 25m</code>
@@ -471,8 +482,8 @@
             </div>
             <div class="flow-step">
               <div class="step-badge">3</div>
-              <h4>Instant Sync with CampusAssist</h4>
-              <p>Upcoming lab submissions and project deadlines automatically populate your morning CampusAssist schedule.</p>
+              <h4>Instant Sync with CampAssist</h4>
+              <p>Upcoming lab submissions and project deadlines automatically populate your morning CampAssist schedule.</p>
               <div class="interactive-snippet">
                 <span class="snip-icon">🔔</span>
                 <code>Synced: Lab Record Due Friday 2 PM</code>
@@ -489,15 +500,12 @@
         <div class="glass-card identity-strip-card">
           <div class="identity-content">
             <div class="identity-icon-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
+              <img src="assets/hayoncampus-icon.png" alt="HayonCampus" class="identity-pill-logo">
               <span>UNIFIED SINGLE SIGN-ON</span>
             </div>
             <h2 class="identity-heading">One identity, two experiences</h2>
             <p class="identity-description">
-              One HayonCampus account carries seamlessly across both products. Jump from checking your morning lecture attendance in CampusAssist to building hackathon projects and reading notes in StudyOS—no duplicate profiles, no fractured passwords, always in sync.
+              One HayonCampus account carries seamlessly across both products. Jump from checking your morning lecture attendance in CampAssist to building hackathon projects and reading notes in StudyOS—no duplicate profiles, no fractured passwords, always in sync.
             </p>
           </div>
           <div class="identity-action">
@@ -519,8 +527,13 @@
     <div class="footer-container">
       <div class="footer-brand-side">
         <div class="footer-brand">
-          <span class="footer-brand-name">HayonCampus</span>
-          <span class="footer-tagline">Higher Days, Brighter You.</span>
+          <div class="footer-brand-badge">
+            <img src="assets/hayoncampus-icon.png" alt="HayonCampus Logo" class="footer-brand-logo-img">
+          </div>
+          <div class="footer-brand-text">
+            <span class="footer-brand-name">HayonCampus</span>
+            <span class="footer-tagline">Higher Days, Brighter You.</span>
+          </div>
         </div>
         <p class="copyright-text">© 2026 HayonCampus. All rights reserved.</p>
       </div>
@@ -544,8 +557,13 @@
     <div class="modal-container glass-card modal-glass">
       <div class="modal-header">
         <div class="modal-title-group">
-          <span class="modal-badge">HAYONCAMPUS ECOSYSTEM</span>
-          <h3 class="modal-heading">Launch Campus Suite</h3>
+          <div class="modal-logo-badge">
+            <img src="assets/hayoncampus-icon.png" alt="HayonCampus" class="modal-logo-img">
+          </div>
+          <div>
+            <span class="modal-badge">HAYONCAMPUS ECOSYSTEM</span>
+            <h3 class="modal-heading">Launch Campus Suite</h3>
+          </div>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
       </div>
@@ -553,19 +571,19 @@
         <p class="modal-intro">Choose an application to launch. Your unified HayonCampus profile automatically carries over.</p>
         
         <div class="launcher-grid">
-          <!-- Launch CampusAssist -->
+          <!-- Launch CampAssist -->
           <div class="launcher-card">
             <div class="launcher-header">
-              <img src="assets/campassist-icon.png" alt="CampusAssist" class="launcher-icon">
+              <img src="assets/campassist-icon.png" alt="CampAssist" class="launcher-icon">
               <div>
-                <h4>CampusAssist</h4>
+                <h4>CampAssist</h4>
                 <span class="launcher-tag">College Companion</span>
               </div>
             </div>
             <p>Access your timetable, attendance calculator, classroom directions, and CR alerts.</p>
             <div class="launcher-links">
               <a href="https://www.campassist.me/" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-white launcher-btn">
-                <span>Launch CampusAssist</span>
+                <span>Launch CampAssist</span>
                 <span>↗</span>
               </a>
               <button type="button" class="launcher-demo-link" id="demoCampAssistInModal">Run in-browser simulation</button>
@@ -601,7 +619,7 @@
       <div class="modal-header">
         <div class="modal-title-group">
           <span class="modal-badge" id="simBadge">FEATURE PREVIEW</span>
-          <h3 class="modal-heading" id="simHeading">CampusAssist: Attendance & Bunk Guard</h3>
+          <h3 class="modal-heading" id="simHeading">CampAssist: Attendance & Bunk Guard</h3>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
       </div>
@@ -617,13 +635,18 @@
     <div class="modal-container glass-card modal-glass">
       <div class="modal-header">
         <div class="modal-title-group">
-          <span class="modal-badge">SHARED IDENTITY</span>
-          <h3 class="modal-heading">Create your HayonCampus Account</h3>
+          <div class="modal-logo-badge">
+            <img src="assets/hayoncampus-icon.png" alt="HayonCampus" class="modal-logo-img">
+          </div>
+          <div>
+            <span class="modal-badge">SHARED IDENTITY</span>
+            <h3 class="modal-heading">Create your HayonCampus Account</h3>
+          </div>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
       </div>
       <div class="modal-body">
-        <p class="modal-intro">One account provides access to both CampusAssist and StudyOS with Firebase Auth Single Sign-On.</p>
+        <p class="modal-intro">One account provides access to both CampAssist and StudyOS with Firebase Auth Single Sign-On.</p>
         
         <form class="auth-form" id="signupForm" onsubmit="event.preventDefault(); window.handleMockRegister();">
           <div class="form-group">
@@ -663,9 +686,9 @@
         <div class="auth-success-state hidden" id="authSuccessBox">
           <div class="success-icon">🎉</div>
           <h4>Welcome to HayonCampus!</h4>
-          <p>Your unified identity has been created. You can now seamlessly navigate between CampusAssist and StudyOS without re-authenticating.</p>
+          <p>Your unified identity has been created. You can now seamlessly navigate between CampAssist and StudyOS without re-authenticating.</p>
           <div class="synced-apps-pill">
-            <span>✓ CampusAssist Synced</span>
+            <span>✓ CampAssist Synced</span>
             <span>✓ StudyOS Synced</span>
           </div>
           <button type="button" class="pill-btn pill-btn-white" data-close-modal>Enter Workspace</button>
@@ -679,17 +702,21 @@
     <div class="modal-container glass-card modal-glass">
       <div class="modal-header">
         <div class="modal-title-group">
-          <span class="modal-badge">ABOUT US</span>
-          <h3 class="modal-heading">Higher Days, Brighter You</h3>
+          <div class="modal-logo-badge">
+            <img src="assets/hayoncampus-icon.png" alt="HayonCampus" class="modal-logo-img">
+          </div>
+          <div>
+            <span class="modal-badge">ABOUT US</span>
+            <h3 class="modal-heading">Higher Days, Brighter You</h3>
+          </div>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
       </div>
       <div class="modal-body modal-text-body">
         <p><strong>HayonCampus</strong> was born from a fundamental frustration in college life: students had to switch between four different disconnected websites just to check where their next class was, whether they could afford to miss a lecture, where to find syllabus notes, and how to recruit classmates for hackathons.</p>
-        <p>We built HayonCampus as the parent ecosystem to solve both sides of college existence:</p>
         <div class="about-pillars">
           <div class="about-pillar">
-            <h4>1. Physical Campus Life (CampusAssist)</h4>
+            <h4>1. Physical Campus Life (CampAssist)</h4>
             <p>Handling every real-world college constraint: class timings, room changes, 75% attendance criteria, exam seating, and campus navigation.</p>
           </div>
           <div class="about-pillar">
@@ -707,8 +734,13 @@
     <div class="modal-container glass-card modal-glass">
       <div class="modal-header">
         <div class="modal-title-group">
-          <span class="modal-badge">GET IN TOUCH</span>
-          <h3 class="modal-heading">Connect with HayonCampus</h3>
+          <div class="modal-logo-badge">
+            <img src="assets/hayoncampus-icon.png" alt="HayonCampus" class="modal-logo-img">
+          </div>
+          <div>
+            <span class="modal-badge">GET IN TOUCH</span>
+            <h3 class="modal-heading">Connect with HayonCampus</h3>
+          </div>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
       </div>

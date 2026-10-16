@@ -10,25 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================================
   const featureData = {
     timetable: {
-      app: 'campusassist',
-      tag: 'CampusAssist Module',
+      app: 'campassist',
+      tag: 'CampAssist Module',
       title: 'Interactive Timetable & Next Lecture Countdown',
       desc: 'Tracks real-time lecture schedules with room numbers, instructor details, and automatic countdowns to your next classroom.',
-      simType: 'campusassist-timetable'
+      simType: 'campassist-timetable'
     },
     attendance: {
-      app: 'campusassist',
-      tag: 'CampusAssist Module',
+      app: 'campassist',
+      tag: 'CampAssist Module',
       title: '75% Attendance Bunk Guard & Safe-Skip Planner',
       desc: 'Accurately calculates your attendance percentage and tells you exactly how many lectures you can afford to miss or need to attend.',
-      simType: 'campusassist-attendance'
+      simType: 'campassist-attendance'
     },
     roomfinder: {
-      app: 'campusassist',
-      tag: 'CampusAssist Module',
+      app: 'campassist',
+      tag: 'CampAssist Module',
       title: 'Classroom Finder & Campus Seating Matrix',
       desc: 'Find any department room or computer lab instantly with interactive floor maps and mid-term exam hall seat allocations.',
-      simType: 'campusassist-roomfinder'
+      simType: 'campassist-roomfinder'
     },
     classes: {
       app: 'studyos',
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const featureChips = document.querySelectorAll('.feature-chip');
-  const cardCampusAssist = document.getElementById('cardCampusAssist');
+  const cardCampAssist = document.getElementById('cardCampAssist') || document.getElementById('cardCampusAssist');
   const cardStudyOS = document.getElementById('cardStudyOS');
 
   let currentActiveFeature = 'timetable';
@@ -73,16 +73,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Highlight corresponding card
-    if (data.app === 'campusassist') {
-      cardCampusAssist.style.borderColor = 'rgba(255, 255, 255, 0.7)';
-      cardCampusAssist.style.boxShadow = '0 30px 70px rgba(25, 163, 233, 0.35)';
+    if (data.app === 'campassist' || data.app === 'campusassist') {
+      if (cardCampAssist) {
+        cardCampAssist.style.borderColor = 'rgba(255, 255, 255, 0.7)';
+        cardCampAssist.style.boxShadow = '0 30px 70px rgba(25, 163, 233, 0.35)';
+      }
       cardStudyOS.style.borderColor = '';
       cardStudyOS.style.boxShadow = '';
     } else {
       cardStudyOS.style.borderColor = 'rgba(255, 255, 255, 0.7)';
       cardStudyOS.style.boxShadow = '0 30px 70px rgba(217, 70, 168, 0.35)';
-      cardCampusAssist.style.borderColor = '';
-      cardCampusAssist.style.boxShadow = '';
+      if (cardCampAssist) {
+        cardCampAssist.style.borderColor = '';
+        cardCampAssist.style.boxShadow = '';
+      }
     }
   }
 
@@ -145,7 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('navGetStartedBtn')?.addEventListener('click', () => openModal(authModal));
   document.getElementById('createAccountBtn')?.addEventListener('click', () => openModal(authModal));
   document.getElementById('exploreProductsBtn')?.addEventListener('click', () => openModal(launcherModal));
-  document.getElementById('openCampusAssistBtn')?.addEventListener('click', () => openModal(launcherModal));
+  
+  const openCampAssistHandler = () => openModal(launcherModal);
+  document.getElementById('openCampAssistBtn')?.addEventListener('click', openCampAssistHandler);
+  document.getElementById('openCampusAssistBtn')?.addEventListener('click', openCampAssistHandler);
   document.getElementById('openStudyOSBtn')?.addEventListener('click', () => openModal(launcherModal));
 
   document.getElementById('navAboutBtn')?.addEventListener('click', (e) => {
@@ -169,9 +176,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Quick demos on cards
-  document.getElementById('previewCampusAssistBtn')?.addEventListener('click', () => {
-    openSimulator('campusassist-attendance');
-  });
+  const previewCampAssistHandler = () => {
+    openSimulator('campassist-attendance');
+  };
+  document.getElementById('previewCampAssistBtn')?.addEventListener('click', previewCampAssistHandler);
+  document.getElementById('previewCampusAssistBtn')?.addEventListener('click', previewCampAssistHandler);
 
   document.getElementById('previewStudyOSBtn')?.addEventListener('click', () => {
     openSimulator('studyos-vault');
@@ -179,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('demoCampAssistInModal')?.addEventListener('click', () => {
     closeModal(launcherModal);
-    openSimulator('campusassist-attendance');
+    openSimulator('campassist-attendance');
   });
 
   document.getElementById('demoStudyOSInModal')?.addEventListener('click', () => {
@@ -200,13 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderSimulatorContent(type) {
-    if (type.startsWith('campusassist')) {
-      simBadge.textContent = 'CAMPUSASSIST INTERACTIVE DEMO';
+    if (type.startsWith('campassist') || type.startsWith('campusassist')) {
+      simBadge.textContent = 'CAMPASSIST INTERACTIVE DEMO';
       simHeading.textContent = 'Smart Attendance & 75% Bunk Guard';
       
       simContent.innerHTML = `
         <p class="modal-intro">
-          Test the exact attendance algorithm used in CampusAssist. Enter your current class attendance to predict safe bunks or catch-up requirements.
+          Test the exact attendance algorithm used in CampAssist. Enter your current class attendance to predict safe bunks or catch-up requirements.
         </p>
 
         <div class="sim-interactive-box">
@@ -480,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
     legalModalHeading.textContent = 'Terms of Service';
     legalModalContent.innerHTML = `
       <p><strong>Effective Date: 2026</strong></p>
-      <p>Welcome to HayonCampus. By accessing CampusAssist or StudyOS via your HayonCampus credentials, you agree to these Terms.</p>
+      <p>Welcome to HayonCampus. By accessing CampAssist or StudyOS via your HayonCampus credentials, you agree to these Terms.</p>
       <p><strong>1. Acceptable Academic Conduct</strong><br>Users agree to upload original notes, assignments, and study guides. Uploading copyright-infringing exam papers or malicious material is prohibited.</p>
       <p><strong>2. Single Sign-On Account Integrity</strong><br>You are responsible for safeguarding your HayonCampus login credentials. One account powers both platforms simultaneously.</p>
       <p>HayonCampus reserves the right to restrict access to accounts that violate university academic honor codes.</p>
