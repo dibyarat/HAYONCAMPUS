@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HayonCampus — The Parent Platform for Student Life & Study</title>
+  <meta name="description" content="HayonCampus is the unified parent platform behind CampusAssist (daily college companion) and StudyOS (academic collaborative workspace). One identity, two experiences.">
+  <meta name="keywords" content="HayonCampus, CampusAssist, StudyOS, college companion, academic workspace, student timetable, attendance calculator, team finder">
+  
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+  
+  <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient background glow elements (subtle enhancement to 3-stop vertical gradient) -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-middle" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- 1. NAVIGATION BAR -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="navbar-container">
+        <!-- Wordmark / Brand -->
+        <a href="#" class="brand-link" aria-label="HayonCampus Home">
+          <div class="brand-badge">
+            <svg class="brand-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ffffff" stop-opacity="0.95"/>
+                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="36" height="36" rx="12" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+              <path d="M12 28V12L20 18L28 12V28" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="20" cy="24" r="2.5" fill="white"/>
+            </svg>
+          </div>
+          <span class="brand-name">HayonCampus</span>
+        </a>
+
+        <!-- Centered / Right Nav Links -->
+        <div class="nav-menu" id="navMenu">
+          <a href="#products" class="nav-link">Products</a>
+          <a href="#ecosystem" class="nav-link">Ecosystem</a>
+          <a href="#about" class="nav-link" id="navAboutBtn">About</a>
+          <a href="#contact" class="nav-link" id="navContactBtn">Contact</a>
+        </div>
+
+        <!-- Far Right CTA & Mobile Toggle -->
+        <div class="nav-actions">
+          <button type="button" class="pill-btn pill-btn-white nav-cta" id="navGetStartedBtn">
+            <span>Get started</span>
+            <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          
+          <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="page-wrapper">
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <!-- Tagline Pill -->
+        <div class="tagline-pill-wrapper">
+          <div class="tagline-pill">
+            <span class="tagline-sparkle" aria-hidden="true">✦</span>
+            <span class="tagline-text">HIGHER DAYS, BRIGHTER YOU</span>
+          </div>
+        </div>
+
+        <!-- Large Bold Headline -->
+        <h1 class="hero-headline">
+          The parent platform behind every tool a student <span class="highlight-text">actually uses</span>
+        </h1>
+
+        <!-- Supporting Paragraph -->
+        <p class="hero-description">
+          HayonCampus unifies <strong>CampusAssist</strong> and <strong>StudyOS</strong> under one seamless identity. From navigating morning lectures and tracking attendance to collaborating on lab projects and building hackathon teams—everything stays synchronized in one connected ecosystem.
+        </p>
+
+        <!-- Two Hero Buttons -->
+        <div class="hero-cta-group">
+          <a href="#products" class="pill-btn pill-btn-white hero-primary-btn" id="exploreProductsBtn">
+            <span>Explore the products</span>
+            <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <button type="button" class="pill-btn pill-btn-outline hero-secondary-btn" id="learnMoreBtn">
+            <span>Learn more</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Ecosystem Live Badge -->
+        <div class="hero-meta-badge">
+          <span class="pulse-indicator"></span>
+          <span>Unified Firebase Auth SSO • Real-time Sync • Multi-Campus Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURE CHIPS SECTION (TAGS ROW) -->
+    <section class="feature-chips-section" aria-label="Key Product Features">
+      <div class="chips-container">
+        <p class="chips-label">Explore core modules across the HayonCampus suite:</p>
+        <div class="chips-row" role="tablist">
+          <button type="button" class="feature-chip active" data-feature="timetable" data-app="campusassist" role="tab" aria-selected="true">
+            <span class="chip-icon">📅</span>
+            <span>Timetable</span>
+          </button>
+          <button type="button" class="feature-chip" data-feature="attendance" data-app="campusassist" role="tab" aria-selected="false">
+            <span class="chip-icon">🎯</span>
+            <span>Attendance</span>
+          </button>
+          <button type="button" class="feature-chip" data-feature="roomfinder" data-app="campusassist" role="tab" aria-selected="false">
+            <span class="chip-icon">📍</span>
+            <span>Room Finder</span>
+          </button>
+          <button type="button" class="feature-chip" data-feature="classes" data-app="studyos" role="tab" aria-selected="false">
+            <span class="chip-icon">📚</span>
+            <span>Study Classes</span>
+          </button>
+          <button type="button" class="feature-chip" data-feature="vault" data-app="studyos" role="tab" aria-selected="false">
+            <span class="chip-icon">🔒</span>
+            <span>Notes Vault</span>
+          </button>
+          <button type="button" class="feature-chip" data-feature="teams" data-app="studyos" role="tab" aria-selected="false">
+            <span class="chip-icon">🤝</span>
+            <span>Team Finder</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TWO GLASS PRODUCT CARDS SECTION -->
+    <section class="products-section" id="products" aria-label="Our Products">
+      <div class="products-container">
+        <div class="section-header">
+          <h2 class="section-title">Two dedicated engines, one continuous student journey</h2>
+          <p class="section-subtitle">Switch smoothly between daytime campus operations and evening academic acceleration.</p>
+        </div>
+
+        <div class="products-grid">
+
+          <!-- CARD 1: CampusAssist -->
+          <article class="glass-card product-card" id="cardCampusAssist">
+            <div class="card-glow" aria-hidden="true"></div>
+            
+            <!-- Top Badge / Header -->
+            <div class="card-header">
+              <div class="product-badge-group">
+                <div class="icon-badge campassist-badge">
+                  <img src="assets/campassist-icon.png" alt="CampusAssist Icon" class="badge-img" onerror="this.src='assets/logo-mark.svg'">
+                </div>
+                <div class="product-meta">
+                  <span class="app-subtag">DAILY CAMPUS ENGINE</span>
+                  <h3 class="product-title">CampusAssist</h3>
+                </div>
+              </div>
+              <span class="status-pill active-pill">Live on Campus</span>
+            </div>
+
+            <!-- One-line Description -->
+            <p class="product-description">
+              Your college companion for daily campus life.
+            </p>
+
+            <!-- 4-item Bullet List -->
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Dashboard & weekly timetable</strong>
+                  <span>Real-time lecture countdowns, day-by-day schedules, and teacher notes</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Attendance tracking & planning</strong>
+                  <span>Smart 75% attendance bunk calculator and safe-skip predictions</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Room finder & campus map</strong>
+                  <span>Interactive floor maps, lab routing, and examination seating matrix</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>SGPA/CGPA & academic tools</strong>
+                  <span>Semester grade projections, lab record repositories, and CR notifications</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Deep Project Know-how Snippet -->
+            <div class="card-project-preview">
+              <div class="micro-stat-badge">
+                <span class="micro-icon">⚡</span>
+                <span>Includes CR Broadcasts, Exam Seating Matrix & Offline Term Sync</span>
+              </div>
+            </div>
+
+            <!-- Card Action Footer -->
+            <div class="card-footer">
+              <button type="button" class="card-link-btn" id="openCampusAssistBtn">
+                <span>Open CampusAssist</span>
+                <span class="arrow-symbol">→</span>
+              </button>
+              <button type="button" class="interactive-pill-tag" id="previewCampusAssistBtn">
+                Quick Demo
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 2: StudyOS -->
+          <article class="glass-card product-card" id="cardStudyOS">
+            <div class="card-glow" aria-hidden="true"></div>
+            
+            <!-- Top Badge / Header -->
+            <div class="card-header">
+              <div class="product-badge-group">
+                <div class="icon-badge studyos-badge">
+                  <img src="assets/studyos-mark.png" alt="StudyOS Icon" class="badge-img" onerror="this.src='assets/studyos-icon.png'">
+                </div>
+                <div class="product-meta">
+                  <span class="app-subtag">ACADEMIC WORKSPACE</span>
+                  <h3 class="product-title">StudyOS</h3>
+                </div>
+              </div>
+              <span class="status-pill active-pill">Collaborative Hub</span>
+            </div>
+
+            <!-- One-line Description -->
+            <p class="product-description">
+              Your academic workspace for focused, collaborative study.
+            </p>
+
+            <!-- 4-item Bullet List -->
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Virtual study classes & notes</strong>
+                  <span>Topic-by-topic modules with lecture audio, slides, and syllabus trackers</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Public/private notes vault</strong>
+                  <span>Peer-reviewed community notes, ratings, bookmarks, and Cloudinary PDF viewer</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Projects & lab repository</strong>
+                  <span>Semester assignments, code solutions, viva question banks, and source files</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-check" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div class="feature-text">
+                  <strong>Team finder for group work</strong>
+                  <span>Matchmaking for hackathons & major projects by required skills and roles</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Deep Project Know-how Snippet -->
+            <div class="card-project-preview">
+              <div class="micro-stat-badge">
+                <span class="micro-icon">💡</span>
+                <span>Includes Peer Help Marketplace, Rating System & Firestore Realtime Sync</span>
+              </div>
+            </div>
+
+            <!-- Card Action Footer -->
+            <div class="card-footer">
+              <button type="button" class="card-link-btn" id="openStudyOSBtn">
+                <span>Open StudyOS</span>
+                <span class="arrow-symbol">→</span>
+              </button>
+              <button type="button" class="interactive-pill-tag" id="previewStudyOSBtn">
+                Quick Demo
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THREE-COLUMN STATS ROW -->
+    <section class="stats-section" aria-label="Key Ecosystem Statistics">
+      <div class="stats-container glass-card stats-card">
+        <div class="stats-grid">
+          
+          <!-- Column 1 -->
+          <div class="stat-column">
+            <div class="stat-number-wrapper">
+              <span class="stat-number">2</span>
+            </div>
+            <div class="stat-label-wrapper">
+              <span class="stat-divider-slash">/</span>
+              <span class="stat-label">unified campus apps</span>
+            </div>
+            <p class="stat-subdetail">CampusAssist for operations • StudyOS for academics</p>
+          </div>
+
+          <!-- Vertical Divider 1 -->
+          <div class="stat-vertical-line" aria-hidden="true"></div>
+
+          <!-- Column 2 -->
+          <div class="stat-column">
+            <div class="stat-number-wrapper">
+              <span class="stat-number">15+</span>
+            </div>
+            <div class="stat-label-wrapper">
+              <span class="stat-divider-slash">/</span>
+              <span class="stat-label">academic & campus modules</span>
+            </div>
+            <p class="stat-subdetail">Timetable, 75% Bunk Guard, Notes, Teams & Viva</p>
+          </div>
+
+          <!-- Vertical Divider 2 -->
+          <div class="stat-vertical-line" aria-hidden="true"></div>
+
+          <!-- Column 3 -->
+          <div class="stat-column">
+            <div class="stat-number-wrapper">
+              <span class="stat-number">1</span>
+            </div>
+            <div class="stat-label-wrapper">
+              <span class="stat-divider-slash">/</span>
+              <span class="stat-label">shared account identity</span>
+            </div>
+            <p class="stat-subdetail">Single Sign-On across all college mobile & web portals</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE ECOSYSTEM SHOWCASE (Codebase Knowledge Integration) -->
+    <section class="ecosystem-section" id="ecosystem" aria-label="Ecosystem Integration">
+      <div class="ecosystem-container">
+        <div class="glass-card ecosystem-showcase-card">
+          <div class="ecosystem-header">
+            <div>
+              <span class="badge-accent">HOW THE SUITE WORKS TOGETHER</span>
+              <h2 class="ecosystem-title">One seamless workflow from 9 AM to 11 PM</h2>
+            </div>
+            <div class="tab-pill-switcher" role="tablist">
+              <button type="button" class="tab-pill active" id="tabDayBtn" role="tab" aria-selected="true">
+                ☀️ 9:00 AM Campus Life
+              </button>
+              <button type="button" class="tab-pill" id="tabNightBtn" role="tab" aria-selected="false">
+                🌙 8:00 PM Study Sprint
+              </button>
+            </div>
+          </div>
+
+          <div class="ecosystem-content-grid" id="ecosystemDayView">
+            <div class="flow-step">
+              <div class="step-badge">1</div>
+              <h4>Check Next Class & Room</h4>
+              <p>Wake up and glance at CampusAssist. Your room code, floor number, and lecturer name are ready before you step out of the dorm.</p>
+              <div class="interactive-snippet">
+                <span class="snip-icon">📍</span>
+                <code>Room 304 • Data Structures • In 25m</code>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-badge">2</div>
+              <h4>Check 75% Bunk Planner</h4>
+              <p>Debating taking a leave? The predictive attendance calculator tells you exactly how many lectures you can safely miss.</p>
+              <div class="interactive-snippet">
+                <span class="snip-icon">🛡️</span>
+                <code>82.4% Attendance • 3 safe bunks left</code>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-badge">3</div>
+              <h4>One-Click Jump to StudyOS</h4>
+              <p>Access lecture slides, lab manuals, and peer notes tied directly to your course code with zero friction.</p>
+              <div class="interactive-snippet">
+                <span class="snip-icon">🔄</span>
+                <code>Linked Notes Vault: CS301 (14 Docs)</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="ecosystem-content-grid hidden" id="ecosystemNightView">
+            <div class="flow-step">
+              <div class="step-badge">1</div>
+              <h4>Collaborative Notes Vault</h4>
+              <p>Filter student-contributed summaries, lab practical solutions, and previous year exam questions with community ratings.</p>
+              <div class="interactive-snippet">
+                <span class="snip-icon">⭐</span>
+                <code>4.9/5 Rating • 182 Saves • PDF Instant View</code>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-badge">2</div>
+              <h4>Recruit Hackathon Teammates</h4>
+              <p>Need a Frontend developer or ML engineer for the upcoming Smart India Hackathon? Post a squad invite in Team Finder.</p>
+              <div class="interactive-snippet">
+                <span class="snip-icon">🤝</span>
+                <code>Team "ByteForge" • 2/4 Members • Open</code>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="step-badge">3</div>
+              <h4>Instant Sync with CampusAssist</h4>
+              <p>Upcoming lab submissions and project deadlines automatically populate your morning CampusAssist schedule.</p>
+              <div class="interactive-snippet">
+                <span class="snip-icon">🔔</span>
+                <code>Synced: Lab Record Due Friday 2 PM</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DARKER TRANSLUCENT IDENTITY STRIP BANNER -->
+    <section class="identity-strip-section" aria-label="Identity Banner">
+      <div class="identity-strip-container">
+        <div class="glass-card identity-strip-card">
+          <div class="identity-content">
+            <div class="identity-icon-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>UNIFIED SINGLE SIGN-ON</span>
+            </div>
+            <h2 class="identity-heading">One identity, two experiences</h2>
+            <p class="identity-description">
+              One HayonCampus account carries seamlessly across both products. Jump from checking your morning lecture attendance in CampusAssist to building hackathon projects and reading notes in StudyOS—no duplicate profiles, no fractured passwords, always in sync.
+            </p>
+          </div>
+          <div class="identity-action">
+            <button type="button" class="pill-btn pill-btn-white identity-cta-btn" id="createAccountBtn">
+              <span>Create your account</span>
+              <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand-side">
+        <div class="footer-brand">
+          <span class="footer-brand-name">HayonCampus</span>
+          <span class="footer-tagline">Higher Days, Brighter You.</span>
+        </div>
+        <p class="copyright-text">© 2026 HayonCampus. All rights reserved.</p>
+      </div>
+
+      <nav class="footer-links-side" aria-label="Footer links">
+        <a href="#privacy" class="footer-link" id="footerPrivacyBtn">Privacy</a>
+        <span class="footer-dot">•</span>
+        <a href="#terms" class="footer-link" id="footerTermsBtn">Terms</a>
+        <span class="footer-dot">•</span>
+        <a href="#contact" class="footer-link" id="footerContactBtn">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- INTERACTIVE MODALS & FLYOUTS (Enriched with project features) -->
+  <!-- ======================================================== -->
+
+  <!-- MODAL: APP LAUNCHER / EXPLORE PRODUCTS -->
+  <div class="modal-backdrop" id="launcherModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card modal-glass">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge">HAYONCAMPUS ECOSYSTEM</span>
+          <h3 class="modal-heading">Launch Campus Suite</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">Choose an application to launch. Your unified HayonCampus profile automatically carries over.</p>
+        
+        <div class="launcher-grid">
+          <!-- Launch CampusAssist -->
+          <div class="launcher-card">
+            <div class="launcher-header">
+              <img src="assets/campassist-icon.png" alt="CampusAssist" class="launcher-icon">
+              <div>
+                <h4>CampusAssist</h4>
+                <span class="launcher-tag">College Companion</span>
+              </div>
+            </div>
+            <p>Access your timetable, attendance calculator, classroom directions, and CR alerts.</p>
+            <div class="launcher-links">
+              <a href="https://www.campassist.me/" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-white launcher-btn">
+                <span>Launch CampusAssist</span>
+                <span>↗</span>
+              </a>
+              <button type="button" class="launcher-demo-link" id="demoCampAssistInModal">Run in-browser simulation</button>
+            </div>
+          </div>
+
+          <!-- Launch StudyOS -->
+          <div class="launcher-card">
+            <div class="launcher-header">
+              <img src="assets/studyos-mark.png" alt="StudyOS" class="launcher-icon">
+              <div>
+                <h4>StudyOS</h4>
+                <span class="launcher-tag">Academic Workspace</span>
+              </div>
+            </div>
+            <p>Access virtual classes, study notes vault, lab project repository, and team recruitment.</p>
+            <div class="launcher-links">
+              <a href="https://studyos-nu-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="pill-btn pill-btn-white launcher-btn">
+                <span>Launch StudyOS</span>
+                <span>↗</span>
+              </a>
+              <button type="button" class="launcher-demo-link" id="demoStudyOSInModal">Run in-browser simulation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: INTERACTIVE PREVIEW & TOOL SIMULATOR (Codebase features!) -->
+  <div class="modal-backdrop" id="simulatorModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card modal-glass simulator-glass">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge" id="simBadge">FEATURE PREVIEW</span>
+          <h3 class="modal-heading" id="simHeading">CampusAssist: Attendance & Bunk Guard</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
+      </div>
+
+      <div class="modal-body" id="simContent">
+        <!-- Dynamic simulation content rendered by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: UNIFIED SSO ACCOUNT REGISTRATION -->
+  <div class="modal-backdrop" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card modal-glass">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge">SHARED IDENTITY</span>
+          <h3 class="modal-heading">Create your HayonCampus Account</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">One account provides access to both CampusAssist and StudyOS with Firebase Auth Single Sign-On.</p>
+        
+        <form class="auth-form" id="signupForm" onsubmit="event.preventDefault(); window.handleMockRegister();">
+          <div class="form-group">
+            <label for="studentName">Full Name</label>
+            <input type="text" id="studentName" class="glass-input" placeholder="e.g. Alex Rivera" required>
+          </div>
+          <div class="form-group">
+            <label for="studentEmail">College Email ID</label>
+            <input type="email" id="studentEmail" class="glass-input" placeholder="alex@campus.edu" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="collegeRoll">Roll / Reg Number</label>
+              <input type="text" id="collegeRoll" class="glass-input" placeholder="23CS041" required>
+            </div>
+            <div class="form-group">
+              <label for="studentYear">Academic Year</label>
+              <select id="studentYear" class="glass-input">
+                <option value="1">1st Year (Freshman)</option>
+                <option value="2">2nd Year (Sophomore)</option>
+                <option value="3" selected>3rd Year (Junior)</option>
+                <option value="4">4th Year (Senior)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="studentPassword">Password</label>
+            <input type="password" id="studentPassword" class="glass-input" placeholder="••••••••••••" required>
+          </div>
+
+          <button type="submit" class="pill-btn pill-btn-white form-submit-btn">
+            <span>Activate Unified Account</span>
+            <span>→</span>
+          </button>
+        </form>
+
+        <div class="auth-success-state hidden" id="authSuccessBox">
+          <div class="success-icon">🎉</div>
+          <h4>Welcome to HayonCampus!</h4>
+          <p>Your unified identity has been created. You can now seamlessly navigate between CampusAssist and StudyOS without re-authenticating.</p>
+          <div class="synced-apps-pill">
+            <span>✓ CampusAssist Synced</span>
+            <span>✓ StudyOS Synced</span>
+          </div>
+          <button type="button" class="pill-btn pill-btn-white" data-close-modal>Enter Workspace</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ABOUT HAYONCAMPUS -->
+  <div class="modal-backdrop" id="aboutModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card modal-glass">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge">ABOUT US</span>
+          <h3 class="modal-heading">Higher Days, Brighter You</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body modal-text-body">
+        <p><strong>HayonCampus</strong> was born from a fundamental frustration in college life: students had to switch between four different disconnected websites just to check where their next class was, whether they could afford to miss a lecture, where to find syllabus notes, and how to recruit classmates for hackathons.</p>
+        <p>We built HayonCampus as the parent ecosystem to solve both sides of college existence:</p>
+        <div class="about-pillars">
+          <div class="about-pillar">
+            <h4>1. Physical Campus Life (CampusAssist)</h4>
+            <p>Handling every real-world college constraint: class timings, room changes, 75% attendance criteria, exam seating, and campus navigation.</p>
+          </div>
+          <div class="about-pillar">
+            <h4>2. Academic Collaboration (StudyOS)</h4>
+            <p>Handling every intellectual growth requirement: peer notes, lab assignments, project repositories, and interdisciplinary team building.</p>
+          </div>
+        </div>
+        <p>With a single Firebase-backed credential, HayonCampus unifies your entire collegiate footprint under one secure roof.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CONTACT US -->
+  <div class="modal-backdrop" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card modal-glass">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge">GET IN TOUCH</span>
+          <h3 class="modal-heading">Connect with HayonCampus</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">Want to onboard your university department or suggest a new feature? Reach out to our core team.</p>
+        <form class="auth-form" id="contactForm" onsubmit="event.preventDefault(); window.handleMockContact();">
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" class="glass-input" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" class="glass-input" placeholder="your.email@university.edu" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message / Campus Details</label>
+            <textarea id="contactMessage" rows="4" class="glass-input" placeholder="Tell us about your campus, class section, or inquiry..." required></textarea>
+          </div>
+          <button type="submit" class="pill-btn pill-btn-white form-submit-btn">
+            <span>Send Message</span>
+            <span>→</span>
+          </button>
+        </form>
+        <div class="auth-success-state hidden" id="contactSuccessBox">
+          <div class="success-icon">✉️</div>
+          <h4>Message Received!</h4>
+          <p>Thank you for reaching out. A representative from the HayonCampus team will respond shortly.</p>
+          <button type="button" class="pill-btn pill-btn-white" data-close-modal>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PRIVACY & TERMS -->
+  <div class="modal-backdrop" id="legalModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container glass-card modal-glass">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge">LEGAL & DATA</span>
+          <h3 class="modal-heading" id="legalModalHeading">Privacy Policy</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body modal-text-body" id="legalModalContent">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
+

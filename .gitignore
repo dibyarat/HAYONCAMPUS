@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Production & Build outputs
+dist/
+build/
+
+# Environment variables & secrets
+.env
+*.env
+*.env.*
+*.pem
+*.key
+serviceAccountKey*.json
+
+# Temporary files & backups
+*.bak
+*.bak_*
+*.tmp
+
+# Logs
+*.log
+npm-debug.log*
+
+# System & OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
