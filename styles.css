@@ -1295,14 +1295,28 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  position: relative;
+}
+
+.about-emblem-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(217, 70, 168, 0.35);
+  box-shadow: 0 30px 60px -20px rgba(113, 64, 216, 0.25), 0 0 35px rgba(217, 70, 168, 0.15);
 }
 
 .about-emblem-img {
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
   object-fit: contain;
   margin-bottom: 1.5rem;
-  filter: drop-shadow(0 15px 30px rgba(113, 64, 216, 0.35));
+  filter: drop-shadow(0 12px 28px rgba(135, 88, 245, 0.40)) drop-shadow(0 6px 16px rgba(217, 70, 168, 0.25));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.about-emblem-card:hover .about-emblem-img {
+  transform: scale(1.05) translateY(-2px);
+  filter: drop-shadow(0 18px 36px rgba(135, 88, 245, 0.55)) drop-shadow(0 8px 22px rgba(217, 70, 168, 0.35));
 }
 
 .about-tagline-text {
