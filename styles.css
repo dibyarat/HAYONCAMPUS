@@ -344,8 +344,9 @@ button {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-col: column;
+  flex-direction: column;
   width: 100%;
+  min-height: 100vh;
 }
 
 .container {
@@ -573,33 +574,35 @@ button {
 /* Floating Mockup Showcase (Right Column) */
 .hero-mockup-stage {
   position: relative;
-  min-height: 460px;
+  width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  padding: 1.5rem 0;
 }
 
 .floating-mockup-card {
-  position: absolute;
+  position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 410px;
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.35rem 1.5rem;
   border: 1px solid var(--color-border);
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease;
 }
 
 .card-campassist {
-  top: 0;
-  left: 0;
+  margin-right: auto;
+  margin-left: 0;
   z-index: 2;
   animation: floatStagger1 6s ease-in-out infinite;
 }
 
 .card-studyos {
-  bottom: 0;
-  right: 0;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: -3.5rem;
   z-index: 3;
   animation: floatStagger2 7s ease-in-out infinite 1.5s;
 }
@@ -1472,15 +1475,17 @@ button {
   }
 
   .hero-mockup-stage {
-    min-height: 380px;
+    padding: 1rem 0;
   }
 
   .card-campassist {
-    max-width: 320px;
+    margin: 0 auto;
+    max-width: 360px;
   }
 
   .card-studyos {
-    max-width: 320px;
+    margin: -1.75rem auto 0 auto;
+    max-width: 360px;
   }
 
   .statement-panel {
@@ -1533,6 +1538,10 @@ button {
   }
 
   .floating-mockup-card {
-    max-width: 290px;
+    max-width: 100%;
+  }
+
+  .card-studyos {
+    margin-top: -1.25rem;
   }
 }

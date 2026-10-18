@@ -198,3 +198,4 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = HAYON_CONSTANTS;
 }
+
