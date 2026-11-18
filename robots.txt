@@ -6,3 +6,4 @@ Allow: /assets/
 
 User-agent: *
 Allow: /
+
